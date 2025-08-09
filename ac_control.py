@@ -28,5 +28,23 @@ def fan():
     result = send_ir_command(command)
     return jsonify(result)
 
+@app.route('/70', methods=['GET'])
+def ac70():
+    command = ["ir-ctl", "--send=70.txt"]
+    result = send_ir_command(command)
+    return jsonify(result)
+
+@app.route('/71', methods=['GET'])
+def ac71():
+    command = ["ir-ctl", "--send=71.txt"]
+    result = send_ir_command(command)
+    return jsonify(result)
+
+@app.route('/72', methods=['GET'])
+def ac72():
+    command = ["ir-ctl", "--send=72.txt"]
+    result = send_ir_command(command)
+    return jsonify(result)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
